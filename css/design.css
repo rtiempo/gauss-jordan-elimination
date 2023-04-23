@@ -1,0 +1,92 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: #CEE5D0;
+}
+
+header{
+    background: #35424a;
+    color: #ffffff;
+    padding-top: 20px;
+    min-height: 60px;
+    border-bottom: #000000 3px solid;
+}
+
+footer{
+    background: #35424a;
+    color: #ffffff;
+    padding-top: 10px;
+    min-height: 70px;
+    border-top: #000000 3px solid;
+    border-bottom: #000000 3px solid;
+}
+
+section{
+    padding: 20px;
+}
+
+li{
+    display: inline;
+    padding: 0 20px 0 20px;
+}
+
+a{
+    text-decoration: none;
+}
+
+form{
+    width: 100%;
+}
+
+input{
+    font-size: 1.1rem;
+    background-color: #F3F0D7;
+    padding: .8rem;
+    border-radius: .5rem;
+    border: 2px solid #5E454B;
+    outline: none;    
+}
+input:focus{
+    border: 2px solid rgb(247, 213, 150);
+}
+::placeholder{
+    color: #5E454B;
+}
+
+button{
+    font-size: 1.1rem;
+    color: black;
+    text-align: center;
+    width: 100%;
+    background-color: #D8B384;
+    padding: 0.8rem;
+    border-radius: .5rem;
+    border-color: black;
+    margin-top: 1rem;
+}
+button:hover{
+    background-color: #facf98;
+}
+button:active{
+    background-color: rgb(253, 229, 183);
+}
+
+.container{
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+}
+
+@media(max-width: 780px){
+    header #branding,
+    header nav,
+    header nav li{
+        float: none;
+        text-align: center;
+        width: 100%;
+    }
+}
