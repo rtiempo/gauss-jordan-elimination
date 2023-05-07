@@ -36,3 +36,38 @@
     transform: rotate(360deg);
   }
 }
+
+header{
+  background: #35424a;
+  color: #ffffff;
+  padding-top: 20px;
+  min-height: 60px;
+  border-bottom: #000000 3px solid;
+}
+
+footer{
+  background: #35424a;
+  color: #ffffff;
+  padding-top: 10px;
+  min-height: 70px;
+  border-top: #000000 3px solid;
+  border-bottom: #000000 3px solid;
+}
+
+header li, footer li{
+  display: inline;
+  padding: 0 20px 0 20px;
+}
+
+section{
+  text-align: left;
+  padding: 20px;
+}
+
+#introduction li{
+  list-style-type: decimal;
+}
+
+#calculator{
+  text-align: center;
+}
