@@ -3,7 +3,7 @@ import * as React from 'react';
 const Footer = () => {
     return (
         <footer>
-            <div class="container">
+            <div className="container">
                 <h1>MATH 4102 - Group 11</h1>
                 <ul>
                     <li>Jomer Allan G. Barcenilla</li>
