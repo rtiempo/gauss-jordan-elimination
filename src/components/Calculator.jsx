@@ -69,55 +69,58 @@ const Calculator = () => {
   };
 
   return (
-    <div>
-      <Typography variant='h5'>Gauss-Jordan Elimination Calculator</Typography>
-      <form onSubmit={handleSubmit}>
-        <Grid container direction='column'>
-          <Grid item>
-            <TextField
-              label='Matrix'
-              multiline
-              rows={5}
-              variant='outlined'
-              fullWidth
-              required
-              value={matrix}
-              onChange={(e) => setMatrix(e.target.value)}
-            />
+    <section id="program">
+      <h1>Program</h1>
+      <div id="calculator">
+        <Typography variant='h5'>Gauss-Jordan Elimination Calculator</Typography>
+        <form onSubmit={handleSubmit}>
+          <Grid container direction='column'>
+            <Grid item>
+              <TextField
+                label='Matrix'
+                multiline
+                rows={5}
+                variant='outlined'
+                fullWidth
+                required
+                value={matrix}
+                onChange={(e) => setMatrix(e.target.value)}
+              />
+            </Grid>
+            <Grid item>
+              <Button type='submit' variant='contained' color='primary'>
+                Calculate
+              </Button>
+            </Grid>
           </Grid>
-          <Grid item>
-            <Button type='submit' variant='contained' color='primary'>
-              Calculate
-            </Button>
-          </Grid>
-        </Grid>
-      </form>
-      {/* <Typography variant="subtitle1">
-        {solution}
-      </Typography> */}
-      {solution.tableData && (
-        <TableContainer component={Paper}>
-          <Table>
-            <TableHead>
-              <TableRow>
-                {solution.columns.map((column) => (
-                  <TableCell key={column}>{column}</TableCell>
-                ))}
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {solution.tableData.map((row, index) => (
-                <TableRow key={index}>
-                  {row.map((cell, index) => (
-                    <TableCell key={index}>{cell}</TableCell>
+        </form>
+        {/* <Typography variant="subtitle1">
+          {solution}
+        </Typography> */}
+        {solution.tableData && (
+          <TableContainer component={Paper}>
+            <Table>
+              <TableHead>
+                <TableRow>
+                  {solution.columns.map((column) => (
+                    <TableCell key={column}>{column}</TableCell>
                   ))}
                 </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
-      )}
-    </div>
+              </TableHead>
+              <TableBody>
+                {solution.tableData.map((row, index) => (
+                  <TableRow key={index}>
+                    {row.map((cell, index) => (
+                      <TableCell key={index}>{cell}</TableCell>
+                    ))}
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        )}
+      </div>
+    </section>
   );
 };
 
