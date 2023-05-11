@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import {
   Button,
   Grid,
-  Paper,
   Table,
   TableBody,
   TableCell,
@@ -59,8 +58,9 @@ const Calculator = () => {
     }
 
     // Format the output as an array of rows and columns
-    const tableData = a.map((row) => [...row.slice(0, n), '|', row[n]]);
-    const columns = Array.from({ length: n + 1 }, (_, i) => `x${i + 1}`);
+    const tableData = a.map((row) => [...row.slice(0, n), row[n]]);
+    const column = Array.from({ length: n }, (_, i) => `x${i + 1}`);
+    const columns = column.concat(['b']);
 
     setSolution({
       tableData,
@@ -74,8 +74,15 @@ const Calculator = () => {
       <div id="calculator">
         <Typography variant='h5'>Gauss-Jordan Elimination Calculator</Typography>
         <form onSubmit={handleSubmit}>
-          <Grid container direction='column'>
-            <Grid item>
+          <Grid 
+            container 
+            direction='row' 
+            spacing={2}
+            justifyContent="center"
+            alignItems="center"
+            p={2}
+          >
+            <Grid item xs={8}>
               <TextField
                 label='Matrix'
                 multiline
@@ -87,8 +94,8 @@ const Calculator = () => {
                 onChange={(e) => setMatrix(e.target.value)}
               />
             </Grid>
-            <Grid item>
-              <Button type='submit' variant='contained' color='primary'>
+            <Grid item xs={8}>
+              <Button type='submit' variant='contained' color='primary' fullWidth>
                 Calculate
               </Button>
             </Grid>
@@ -98,21 +105,76 @@ const Calculator = () => {
           {solution}
         </Typography> */}
         {solution.tableData && (
-          <TableContainer component={Paper}>
-            <Table>
+          <TableContainer>
+            <Table
+              align="center"
+              sx={{
+                width: "auto",
+                minWidth: "500px"
+              }}
+            >
               <TableHead>
-                <TableRow>
-                  {solution.columns.map((column) => (
-                    <TableCell key={column}>{column}</TableCell>
-                  ))}
+                <TableRow
+                  sx={{
+                    borderBottom: "2px solid black",
+                    "& th": {
+                      fontSize: "25px",
+                      color: "#5c5c5c"
+                    }
+                  }}
+                >
+                  {solution.columns.map((column, index) => {
+                    if(index === solution.columns.length-1){
+                      return <TableCell
+                                key={index}
+                                align="center"
+                                sx={{
+                                  border: "1px solid black",
+                                  borderLeft: "2px solid red"
+                                }}
+                              >{column}</TableCell>                      
+                    } 
+                    return <TableCell
+                              key={index}
+                              align="center"
+                              sx={{
+                                border: "1px solid black"
+                              }}
+                            >{column}</TableCell>
+                  })}
                 </TableRow>
               </TableHead>
               <TableBody>
                 {solution.tableData.map((row, index) => (
-                  <TableRow key={index}>
-                    {row.map((cell, index) => (
-                      <TableCell key={index}>{cell}</TableCell>
-                    ))}
+                  <TableRow
+                    key={index}
+                    sx={{
+                      border: "1px solid black",
+                      "& td": {
+                        fontSize: "20px",
+                      }
+                    }}
+                  >
+                    {row.map((cell, index) => {
+                      if(index === row.length-1){
+                        return <TableCell
+                                  key={index}
+                                  align="right"
+                                  sx={{
+                                    border: "1px solid black",
+                                    borderLeft: "2px solid red"
+                                  }}
+                                >{cell}</TableCell>
+                      }
+                      return <TableCell
+                                  key={index}
+                                align="center"
+                                sx={{
+                                  border: "1px solid black"
+                                }}
+                              >{cell}</TableCell>
+                        
+                    })}
                   </TableRow>
                 ))}
               </TableBody>
