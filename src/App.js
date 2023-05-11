@@ -13,7 +13,7 @@ function App() {
       <Header />
       <div className="container">
         <Routes>
-          <Route path="/Introduction" element={<Introduction />}/>
+          <Route path="/" element={<Introduction />}/>
           <Route path="/Calculator" element={<Calculator />}/>
           <Route path="/Specification" element={<Specification />}/>
           <Route path="/Conclusion" element={<Conclusion />}/>

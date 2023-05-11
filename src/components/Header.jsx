@@ -6,7 +6,7 @@ const Header = () => {
         <header> 
             <h1>Gaus-Jordan Elimination</h1>
             <ul>
-                <CustomLink to="/Introduction">Introduction</CustomLink>
+                <CustomLink to="/">Introduction</CustomLink>
                 <CustomLink to="/Calculator">Program</CustomLink>
                 <CustomLink to="/Specification">Specification</CustomLink>
                 <CustomLink to="/Conclusion">Conclusion</CustomLink>
