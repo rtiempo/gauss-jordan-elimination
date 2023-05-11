@@ -4,7 +4,7 @@ import { Link, useMatch, useResolvedPath } from 'react-router-dom';
 const Header = () => {
     return (
         <header> 
-            <h1>Gaus-Jordan Elimination</h1>
+            <h1>Gauss-Jordan Elimination</h1>
             <ul>
                 <CustomLink to="/">Introduction</CustomLink>
                 <CustomLink to="/Calculator">Program</CustomLink>
