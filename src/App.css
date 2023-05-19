@@ -75,7 +75,7 @@ section h1{
   font-size: 35px;
 }
 
-#introduction li{
+#introduction li, #specification li{
   list-style-type: decimal;
 }
 
@@ -83,7 +83,12 @@ section h1{
   text-align: center;
 }
 
+#code{
+  padding-left: 20px;
+}
+
 .container{
   padding: 10px;
   min-height: 100%;
 }
+
