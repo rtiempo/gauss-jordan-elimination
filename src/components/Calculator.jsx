@@ -72,7 +72,8 @@ const Calculator = () => {
     <section id="program">
       <h1>Program</h1>
       <div id="calculator">
-        <Typography variant='h5'>Gauss-Jordan Elimination Calculator</Typography>
+        <Typography variant='h4'>Gauss-Jordan Elimination Calculator</Typography>
+        <Typography variant='p'>Input the entire matrix right here. Elements must be separated by a space. Each row must begin with a new line.</Typography>
         <form onSubmit={handleSubmit}>
           <Grid 
             container 
