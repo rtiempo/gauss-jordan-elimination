@@ -35,7 +35,7 @@ const Specification = () => {
                     const a = lines.map((line) =>`}<br />&emsp;{`
                     line`}<br />&emsp;&emsp;{`
                         .trim()`}<br />&emsp;&emsp;{`
-                        .split(/\s+/)`}<br />&emsp;&emsp;{`
+                        .split(/`}\s{`+/)`}<br />&emsp;&emsp;{`
                         .map((value) => parseFloat(value))`}<br />&emsp;{`
                     );`}<br /><br />&emsp;{`
 
